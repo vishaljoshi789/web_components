@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger X</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .hamburger{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            flex-direction: column;
+            background-color: black;
+        }
+        .line{
+            width: 60px;
+            height:5px;
+            background-color: rgb(255, 255, 255);
+            margin: 5px;
+            transition: 0.5s all ease-in;
+        }
+
+        /* .line1{
+            position: absolute;
+            transform: translateY(-10px);
+            transform: rotate(45deg);
+        }
+        .line3{
+            position: absolute;
+            transform: translateY(10px);
+            transform: rotate(-45deg);
+        }
+        .line2{
+            display: none;
+        } */
+    </style>
+</head>
+<body>
+    <div class="hamburger">
+        <div class="line1 line"></div>
+        <div class="line2 line"></div>
+        <div class="line3 line"></div>
+    </div>
+
+    <script>
+        line1 = document.querySelector('.line1')
+        line3 = document.querySelector('.line3')
+        document.querySelector('.hamburger').addEventListener('click', ()=>{
+            if(document.querySelector('.line2').style.opacity!='0'){
+                line1.style.position = 'fixed'
+                line1.style.transform = 'translateY(-10px)'
+                line1.style.transform = 'rotate(45deg)'
+                line3.style.position = 'fixed';
+                line3.style.transform = 'translateY(10px)';
+                line3.style.transform = 'rotate(-45deg)';
+                document.querySelector('.line2').style.opacity = '0'
+            }else{
+
+                line1.style.transform = 'rotate(0deg)'
+                line3.style.transform = 'rotate(0deg)';
+                line1.style.position = 'relative'
+                line3.style.position = 'relative'
+                document.querySelector('.line2').style.opacity = '1'
+            }
+        })
+    </script>
+</body>
+</html>
