@@ -20,54 +20,46 @@
             background-color: black;
         }
         .line{
-            width: 60px;
+            margin: 3px;
+            width: 70px;
             height:5px;
             background-color: rgb(255, 255, 255);
-            margin: 5px;
             transition: 0.5s all ease-in;
         }
 
-        /* .line1{
-            position: absolute;
-            transform: translateY(-10px);
-            transform: rotate(45deg);
+        .line1{
+            transform: rotate(45deg) translate(0px, 15px);
         }
         .line3{
-            position: absolute;
-            transform: translateY(10px);
-            transform: rotate(-45deg);
+            transform: rotate(-45deg) translate(0px, -15px);
         }
         .line2{
-            display: none;
-        } */
+            transform: translateX(-50px);
+            background: transparent;
+        }
     </style>
 </head>
 <body>
     <div class="hamburger">
-        <div class="line1 line"></div>
-        <div class="line2 line"></div>
-        <div class="line3 line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
     </div>
 
     <script>
-        line1 = document.querySelector('.line1')
-        line3 = document.querySelector('.line3')
+        let open = false
         document.querySelector('.hamburger').addEventListener('click', ()=>{
-            if(document.querySelector('.line2').style.opacity!='0'){
-                line1.style.position = 'fixed'
-                line1.style.transform = 'translateY(-10px)'
-                line1.style.transform = 'rotate(45deg)'
-                line3.style.position = 'fixed';
-                line3.style.transform = 'translateY(10px)';
-                line3.style.transform = 'rotate(-45deg)';
-                document.querySelector('.line2').style.opacity = '0'
+            if(!open){
+               document.getElementsByClassName('line')[0].classList.add('line1')
+               document.getElementsByClassName('line')[1].classList.add('line2')
+               document.getElementsByClassName('line')[2].classList.add('line3')
+               open = true
             }else{
 
-                line1.style.transform = 'rotate(0deg)'
-                line3.style.transform = 'rotate(0deg)';
-                line1.style.position = 'relative'
-                line3.style.position = 'relative'
-                document.querySelector('.line2').style.opacity = '1'
+                document.getElementsByClassName('line')[0].classList.remove('line1')
+               document.getElementsByClassName('line')[1].classList.remove('line2')
+               document.getElementsByClassName('line')[2].classList.remove('line3')
+               open = false
             }
         })
     </script>
