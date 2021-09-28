@@ -1,0 +1,90 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+nav a{
+    color:white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+
+}
+.components{
+    background-color: rgb(37,36,36);
+    color: white;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.components a{
+    transition: 0.2s all ease-in;
+    margin: 20px;
+
+}
+
+.components a:hover{
+    color: rgb(226,56,41);
+}
+
+.upperHeader{
+    background-color: rgb(251,251,250);
+    display: flex;
+    width: 100vw;
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left{
+    margin: 10px;
+    display: flex;
+}
+
+.centre{
+    text-align: center;      
+}
+
+.left img{
+    transition: 0.2s all ease-in;
+    height: 20px;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.left img:hover{
+    filter: invert(1);
+    background-color: rgb(29,199,214);
+
+}
+
+.right{
+    display: flex;
+    margin: 20px;
+}
+
+.right input{
+    height: 25px;
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+}
+
+.right img{
+    background-color: rgb(226,56,41);
+    padding: 2px 5px 0px 2px;
+    border-radius: 0px 20px 20px 0px;
+    margin: 0px 2px;
+    transition: 0.2s all ease-in;
+
+}
+
+.right img:hover{
+    background-color: rgb(235, 39, 21);
+}
